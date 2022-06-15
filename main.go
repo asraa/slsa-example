@@ -4,21 +4,15 @@ import (
 	"log"
 	"os"
 
-	"gopkg.in/yaml.v3"
+	"github.com/asraa/slsa-example/parse"
 )
-
-func ParseYaml(b []byte) error {
-	var t interface{}
-	return yaml.Unmarshal(b, &t)
-
-}
 
 func main() {
 	file, err := os.ReadFile("test.yaml")
 	if err != nil {
 		log.Fatal(err)
 	}
-	if err := ParseYaml(file); err != nil {
+	if err := parse.ParseYaml(file); err != nil {
 		log.Fatal(err)
 	}
 }
