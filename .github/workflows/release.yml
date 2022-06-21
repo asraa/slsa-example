@@ -7,9 +7,6 @@ on:
 
 permissions: read-all
 
-env:
-  EGG: RUN_AT_CORRECT_BRANCH
-
 jobs:
   # Trusted builder.
   build:
